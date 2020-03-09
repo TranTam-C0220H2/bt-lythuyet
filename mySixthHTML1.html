@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐỌc số có 9 chữ số</title>
+</head>
+<body>
+<button onclick="docSo()">Nhập số có 9 chữ số</button>
+<script>
+    function doc1So(n) {
+        switch (n) {
+            case 0:
+                return 'Không';
+            case 1:
+                return 'Một';
+            case 2:
+                return 'Hai';
+            case 3:
+                return 'Ba';
+            case 4:
+                return 'Bốn';
+            case 5:
+                return 'Năm';
+            case 6:
+                return 'Sáu';
+            case 7:
+                return 'Bảy';
+            case 8:
+                return 'Tám';
+            case 9:
+                return 'Chín';
+            default:
+                return 'Không biêt';
+        }
+    }
+
+    function doc9So(n) {
+        let tramTrieu = Math.floor(n / 100000000);
+        let chucTrieu = (Math.floor(n / 10000000)) % 10;
+        let trieu = (Math.floor(n / 1000000)) % 10;
+        let tramNghin = (Math.floor(n / 100000)) % 10;
+        let chucNghin = (Math.floor(n / 10000)) % 10;
+        let nghin = (Math.floor(n / 1000)) % 10;
+        let tram = (Math.floor(n / 100)) % 10;
+        let chuc = (Math.floor(n / 10)) % 10;
+        let donVi = n % 10;
+        let str = "";
+        str += doc1So(tramTrieu) + ' tram ';
+        str += doc1So(chucTrieu) + ' muoi ';
+        str += doc1So(trieu) + ' trieu ';
+        str += doc1So(tramNghin) + ' tram ';
+        str += doc1So(chucNghin) + ' muoi ';
+        str += doc1So(nghin) + ' nghin ';
+        str += doc1So(tram) + ' tram ';
+        str += doc1So(chuc) + ' muoi ';
+        str += doc1So(donVi);
+        return str;
+    }
+
+    function docSo() {
+        let n;
+        n = Number.parseInt(prompt('Nhập số'));
+        alert(doc9So(n));
+    }
+</script>
+</body>
+</html>

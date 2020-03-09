@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đọc số có 3 chữ số</title>
+</head>
+<body>
+<button onclick="docSo()">Nhập số</button>
+<script>
+    function doc1So(n) {
+        switch (n) {
+            case 0:
+                return 'Không';
+            case 1:
+                return 'Một';
+            case 2:
+                return 'Hai';
+            case 3:
+                return 'Ba';
+            case 4:
+                return 'Bốn';
+            case 5:
+                return 'Năm';
+            case 6:
+                return 'Sáu';
+            case 7:
+                return 'Bảy';
+            case 8:
+                return 'Tám';
+            case 9:
+                return 'Chín';
+            default:
+                return 'Không biêt';
+        }
+    }
+
+    function doc3So(n) {
+        let tram = Math.floor(n / 100);//Math.round() làm tròn, Math.ceil() số trần, Math.foor() số sàn
+        let chuc = (Math.floor(n / 10)) % 10;
+        let donVi = n % 10;
+        let str = "";
+        str += doc1So(tram) + 'tram';
+        str += doc1So(chuc) + 'muoi';
+        str += doc1So(donVi);
+        return str;
+
+    }
+
+    function docSo() {
+        let n;
+        n = Number.parseInt(prompt('Nhập số'));
+        alert(doc3So(n));
+    }
+</script>
+</body>
+</html>
